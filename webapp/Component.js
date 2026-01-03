@@ -23,7 +23,7 @@ sap.ui.define([
                     message: oBundle.getText("msg")
                 });
             mData.setDefaultBindingMode(BindingMode.TwoWay);
-            this.setModel(mData);
+            //this.setModel(mData);
         }
 
     });

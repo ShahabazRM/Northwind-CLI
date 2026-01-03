@@ -18,6 +18,13 @@ sap.ui.define([
      
      
     },
+    /**
+     * @override
+     * @returns {void|undefined}
+     */
+    onBeforeRendering: function() {
+      
+    },
     onShowMessageButtonPress : function(evt){
       var message = this.getView().getModel().getProperty("/message");
       MessageToast.show(message);
@@ -42,7 +49,7 @@ sap.ui.define([
 
 		searchEmployee: function(oEvt) {
         var sQuery = oEvt.getParameter("query"),
-          aFilter = [new Filter("firstName",FilterOperator.Contains,sQuery),new Filter("lastName",FilterOperator.Contains,sQuery)],
+          aFilter = [new Filter("FirstName",FilterOperator.Contains,sQuery),new Filter("LastName",FilterOperator.Contains,sQuery)],
           oTable = this.byId("employeeTable"),
           oBinding = oTable.getBinding("items"),
           oFilter = null;

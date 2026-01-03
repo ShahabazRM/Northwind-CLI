@@ -13,9 +13,17 @@
             "tableData": {
                 "uri": "./data/data.json",
                 "type": "JSON"
+            },
+             "northwind": {
+                "uri": "/NorthWind_Service/v2/northwind/northwind.svc/",
+                "type": "OData",
+                "settings": {
+                "odataVersion": "2.0"
+                }
             }
          
         }
+        
        
     },
     "sap.ui": {
@@ -51,6 +59,10 @@
             "employee":{
                 "type" : "sap.ui.model.json.JSONModel",
                 "dataSource": "tableData"
+            },
+            "":{
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "dataSource": "northwind"
             }
         },
         "contentDensities": {

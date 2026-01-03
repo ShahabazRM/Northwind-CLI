@@ -1,38 +1,39 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
 <SearchField search="searchEmployee"/>
-<Table id="employeeTable" items="{employee>/data}" growing="true">
+<Table id="employeeTable" items="{/Employees}" growing="true">
               <headerToolbar>
                 <Toolbar>
                     <Title text="Employees"/>
                     <ToolbarSpacer/>
-                    <Button icon="sap-icon://add" text="{i18n>create}" press="createEmployee"/>
                     <Button icon="sap-icon://settings" press="openSettings"/>
                 </Toolbar>
               </headerToolbar>
               <columns>
                <Column>
-                  <Label text="ID"/>
+                  <Label text="Employee ID"/>
                 </Column>
                 <Column>
                   <Label text="Name"/>
                 </Column>
                 <Column>
-                  <Label text="Age"/>
+                  <Label text="Title"/>
                 </Column>
                 <Column>
-                  <Label text="type"/>
+                  <Label text="City"/>
                 </Column>
                 <Column>
-                  <Label text="Score"/>
+                  <Label text="Hire Date"/>
                 </Column>
               </columns>
               <items>
                 <ColumnListItem type="Navigation" press="navigate">
-                  <Text text="{employee>id}"/>
-                  <Text text="{parts:[{path:'employee>firstName'},{path:'employee>lastName'}],formatter:'.formatName'}"/>
-                  <Text text="{employee>age}"/>
-                  <Text text="{employee>type}"/>
-                  <ObjectStatus text="{employee>score}" state="{path:'employee>score',formatter:'.formatScoreState'}"></ObjectStatus>
+                  <Text text="{EmployeeID}"/>
+                  <Text text="{parts:[{path:'FirstName'},{path:'LastName'}],formatter:'.formatName'}"/>
+                  <Text text="{Title}"/>
+                  <Text text="{City}"/>
+                  <Text text="{path:'HireDate',type:'sap.ui.model.type.Date',formatOptions:{pattern:'dd/mm/yyyy'}}">
+                   </Text> 
+                  <!-- <ObjectStatus text="{employee>score}" state="{path:'employee>score',formatter:'.formatScoreState'}"></ObjectStatus> -->
                    </ColumnListItem>
               </items>
             </Table>
